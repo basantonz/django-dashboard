@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'fontawesome-free',
     'dash',
     'django.contrib.admin',
     'django.contrib.auth',
