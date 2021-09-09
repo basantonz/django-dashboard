@@ -78,8 +78,46 @@ WSGI_APPLICATION = 'dashboard_eup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'melicrud',
+        'CLIENT': {
+            'host': 'mongodb://melimongo:melimongo123@3.143.234.161:27017'
+        }
+    },
+    'electro': {
+        'ENGINE': 'djongo',
+        'NAME': 'melicrud',
+        'CLIENT': {
+            'host': 'mongodb://melimongo:melimongo123@3.143.234.161:27017'
+        }
+    },
+    'fashion': {
+        'ENGINE': 'djongo',
+        'NAME': 'melicrud',
+        'CLIENT': {
+            'host': 'mongodb://melimongo:melimongo123@18.222.217.205:27017'
+        }
+    },
+    'houseful': {
+        'ENGINE': 'djongo',
+        'NAME': 'melicrud',
+        'CLIENT': {
+            'host': 'mongodb://melimongo:melimongo123@52.14.231.186:27017'
+        }
+    },
+    'kids': {
+        'ENGINE': 'djongo',
+        'NAME': 'melicrud',
+        'CLIENT': {
+            'host': 'mongodb://melimongo:melimongo123@3.143.252.41:27017'
+        }
+    },
+    'pets': {
+        'ENGINE': 'djongo',
+        'NAME': 'melicrud',
+        'CLIENT': {
+            'host': 'mongodb://melimongo:melimongo123@18.217.36.119:27017'
+        }
     }
 }
 

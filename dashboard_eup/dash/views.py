@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-tablita = ['dato1\t','dato2\t','dato3\t','dato4\t','dato5\t']
+tablita = ['datatable1','datatable2','datatable3']
 
 def home(request):
 	context = {'tablita':tablita}

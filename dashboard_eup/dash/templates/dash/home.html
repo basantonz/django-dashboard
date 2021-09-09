@@ -1,171 +1,100 @@
-{%load static%}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Dashboard para Envios USA Perú" />
-        <meta name="author" content="Joao Basanta" />
-        <title>Dashboard - EUP Admin</title>
-        <link href="{% static 'style.css' %}" rel="stylesheet" />
-        <link href="{% static 'styles.css' %}" rel="stylesheet" />
-        <link href="{% static 'all.css' %}" rel="stylesheet" />
-        <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet" />
-        <script src="{% static 'fontawesome_free/js/all.min.js' %}"></script>
-        <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-    </head>
-    <body class="sb-nav-fixed" lang="es">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">ENVIOS USA PERÚ</a>
-            <!-- Sidebar Toggle-->
-            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-
-            </form>
-            <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Configuración</a></li>
-                        <li><a class="dropdown-item" href="#!">Actividad</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Cerrar Sesión</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading">MENÚ DE NAVEGACIÓN</div>
-                            <a class="nav-link" href="#">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Tablas
-                            </a>
-                            <a class="nav-link" href="#">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Gráficos
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Reportes en tablas</li>
-                        </ol>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Productos por actualizar
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>Tienda</th>
-                                            <th>Fashion</th>
-                                            <th>Kids</th>
-                                            <th>Pets</th>
-                                            <th>Houseful</th>
-                                            <th>Electro</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nombre</th>
-                                            <th>Posición</th>
-                                            <th>Oficina</th>
-                                            <th>Edad</th>
-                                            <th>Fecha inicial</th>
-                                            <th>Salario</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            
-                                            <td><b>General</b></td>
-                                            <td><b>1</b></td>
-                                            <td><b>2</b></td>
-                                            <td><b>3</b></td>
-                                            <td><b>4</b></td>
-                                            <td><b>5</b></td>
-                                        </tr>
-                                        <tr>
-                                            <td>6pm</td>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Amazon</td>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ebay</td>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Footlocker</td>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Nike</td>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Zappos</td>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Envios USA Perú 2021</div>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>
-        <script src="{% static 'bootstrap.bundle.min.js'%}"></script>
-        <script src="{% static 'scripts.js'%}"></script>
-        <script src="{% static 'simple-datatables@latest.js'%}"></script>
-        <script src="{% static 'datatables-simple-demo.js'%}"></script>
-    </body>
-</html>
+{%extends 'dash/layout.html'%}
+{%block body%}
+<h1 class="mt-4">Dashboard</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Reportes en tablas</li>
+</ol>
+{%for valor in tablita%}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        {%if valor == "datatable1"%}
+        Productos por actualizar
+        {%elif valor == "datatable2"%}
+        Productos actualizados
+        {%elif valor == "datatable3"%}
+        Productos creados
+        {%endif%}
+    </div>
+    <div class="card-body">
+        <table id="{{valor}}" class="display">
+            <thead>
+                <tr>
+                    <th>Tienda</th>
+                    <th>Fashion</th>
+                    <th>Kids</th>
+                    <th>Pets</th>
+                    <th>Houseful</th>
+                    <th>Electro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>General</b></td>
+                    <td><b>1</b></td>
+                    <td><b>2</b></td>
+                    <td><b>3</b></td>
+                    <td><b>4</b></td>
+                    <td><b>5</b></td>
+                </tr>
+                <tr>
+                    <td>6pm</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Amazon</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Ebay</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Footlocker</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Nike</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Zappos</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#{{valor}}').DataTable({
+        "order":[[1,"desc"]]
+    });
+});
+</script>
+{%endfor%}
+{%endblock%}
