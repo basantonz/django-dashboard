@@ -30,14 +30,6 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><b>General</b></td>
-                    <td><b>1</b></td>
-                    <td><b>2</b></td>
-                    <td><b>3</b></td>
-                    <td><b>4</b></td>
-                    <td><b>5</b></td>
-                </tr>
-                <tr>
                     <td>6pm</td>
                     <td>1</td>
                     <td>2</td>
@@ -86,15 +78,76 @@
                     <td>5</td>
                 </tr>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td><b>General</b></td>
+                    <td><b>1</b></td>
+                    <td><b>2</b></td>
+                    <td><b>3</b></td>
+                    <td><b>4</b></td>
+                    <td><b>5</b></td>
+                </tr>
+            </tfoot>
         </table>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('#{{valor}}').DataTable({});
+        });
+        </script>
     </div>
 </div>
-<script type="text/javascript">
-$(document).ready(function() {
-    $('#{{valor}}').DataTable({
-        "order":[[1,"desc"]]
-    });
-});
-</script>
 {%endfor%}
+<div class="row">
+    {%for valor in tablita2%}
+    <div class=" col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                {%if valor == "datatable4"%}
+                Productos listos para subir a Mercado Libre
+                {%elif valor == "datatable5"%}
+                SKU's para correr en UploadSpider
+                {%endif%}
+            </div>
+            <div class="card-body">
+                <table id="{{valor}}" class="display">
+                    <thead>
+                        <tr>
+                            <th>Cuenta</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fashion</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Kids</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Pets</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>Houseful</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>Electro</td>
+                            <td>5</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#{{valor}}').DataTable({});
+                });
+                </script>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
 {%endblock%}

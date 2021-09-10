@@ -79,10 +79,7 @@ WSGI_APPLICATION = 'dashboard_eup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'melicrud',
-        'CLIENT': {
-            'host': 'mongodb://melimongo:melimongo123@3.143.234.161:27017'
-        }
+        'NAME': 'reportes'
     },
     'electro': {
         'ENGINE': 'djongo',
