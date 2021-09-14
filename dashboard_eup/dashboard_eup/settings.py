@@ -81,41 +81,6 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'reportes'
     },
-    'electro': {
-        'ENGINE': 'djongo',
-        'NAME': 'melicrud',
-        'CLIENT': {
-            'host': 'mongodb://melimongo:melimongo123@3.143.234.161:27017'
-        }
-    },
-    'fashion': {
-        'ENGINE': 'djongo',
-        'NAME': 'melicrud',
-        'CLIENT': {
-            'host': 'mongodb://melimongo:melimongo123@18.222.217.205:27017'
-        }
-    },
-    'houseful': {
-        'ENGINE': 'djongo',
-        'NAME': 'melicrud',
-        'CLIENT': {
-            'host': 'mongodb://melimongo:melimongo123@52.14.231.186:27017'
-        }
-    },
-    'kids': {
-        'ENGINE': 'djongo',
-        'NAME': 'melicrud',
-        'CLIENT': {
-            'host': 'mongodb://melimongo:melimongo123@3.143.252.41:27017'
-        }
-    },
-    'pets': {
-        'ENGINE': 'djongo',
-        'NAME': 'melicrud',
-        'CLIENT': {
-            'host': 'mongodb://melimongo:melimongo123@18.217.36.119:27017'
-        }
-    }
 }
 
 
