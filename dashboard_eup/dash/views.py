@@ -17,16 +17,14 @@ def ConvertirLista(cadena):
 		lista=datoObtenido.json()
 		for llave in lista:
 			valores.append(lista[llave])
-			print(lista[llave])
 	except Exception as e:
 		print(e)
 		for i in range(23):
-			valores.append('Vacío')
+			valores.append('APAGADO')
 	return valores
 
 def home(request):
 	listaFashion=ConvertirLista(cadenaFashion)
-	print('lista fashion ok')
 	listaKid=ConvertirLista(cadenaKid)
 	listaPets=ConvertirLista(cadenaPets)
 	listaHouseful=ConvertirLista(cadenaHouseful)
