@@ -21,7 +21,7 @@ def ConvertirLista(cadena):
 	except Exception as e:
 		print(e)
 		for i in range(23):
-			valores.append('Vacío')
+			valores.append('APAGADO')
 	return valores
 
 def home(request):
