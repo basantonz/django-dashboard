@@ -30,3 +30,6 @@ def home(request):
                'listaElectro': listaElectro
                }
     return render(request, "dash/home.html", context)
+
+def graficos(request):
+    return render(request, "dash/graficos.html")
