@@ -1,4 +1,6 @@
-{%extends 'dash/layout.html'%} {%load static%} {%block body%}
+{%extends 'dash/layout.html'%} 
+{%load static%}
+{%block body%}
 <h1 class="mt-4">Dashboard</h1>
 <ol class="breadcrumb mb-4">
   <li class="breadcrumb-item active">Reportes en tablas</li>
@@ -7,9 +9,13 @@
 <div class="card mb-4">
   <div class="card-header">
     <i class="fas fa-table me-1"></i>
-    {%if valor == "datatable1"%} Productos por actualizar {%elif valor ==
-    "datatable2"%} Productos actualizados {%elif valor == "datatable3"%}
-    Productos creados {%endif%}
+    {%if valor == "datatable1"%} 
+    Productos por actualizar 
+    {%elif valor == "datatable2"%} 
+    Productos actualizados 
+    {%elif valor == "datatable3"%}
+    Productos creados 
+    {%endif%}
   </div>
   <div class="card-body">
     <table id="{{valor}}" class="display">
@@ -27,13 +33,18 @@
         <tr>
           <td>6pm</td>
           <td>
-            {%if valor == "datatable1"%} {{listaFashion.1}} {%elif valor ==
-            "datatable2"%} {{listaFashion.8}} {%elif valor == "datatable3"%}
-            {{listaFashion.15}} {%endif%}
+            {%if valor == "datatable1"%} 
+            {{listaFashion.1}} 
+            {%elif valor == "datatable2"%} 
+            {{listaFashion.8}} 
+            {%elif valor == "datatable3"%}
+            {{listaFashion.15}} 
+            {%endif%}
           </td>
           <td>
-            {%if valor == "datatable1"%} {{listaKid.1}} {%elif valor ==
-            "datatable2"%} {{listaKid.8}} {%elif valor == "datatable3"%}
+            {%if valor == "datatable1"%} 
+            {{listaKid.1}} 
+            {%elif valor == "datatable2"%} {{listaKid.8}} {%elif valor == "datatable3"%}
             {{listaKid.15}} {%endif%}
           </td>
           <td>
@@ -264,8 +275,11 @@
             <tr>
               <td>Fashion</td>
               <td>
-                {%if valor == "datatable4"%} {{listaFashion.21}} {%elif valor ==
-                "datatable5"%} {{listaFashion.22}} {%endif%}
+                {%if valor == "datatable4"%} 
+                {{listaFashion.21}} 
+                {%elif valor == "datatable5"%} 
+                {{listaFashion.22}} 
+                {%endif%}
               </td>
             </tr>
             <tr>
