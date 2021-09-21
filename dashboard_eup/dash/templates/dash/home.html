@@ -1,474 +1,311 @@
-{%extends 'dash/layout.html'%}
-{%load static%}
-{%block body%}
+{%extends 'dash/layout.html'%} {%load static%} {%block body%}
 <h1 class="mt-4">Dashboard</h1>
 <ol class="breadcrumb mb-4">
-    <li class="breadcrumb-item active">Reportes en tablas</li>
+  <li class="breadcrumb-item active">Reportes en tablas</li>
 </ol>
 {%for valor in tablita%}
 <div class="card mb-4">
-    <div class="card-header">
-        <i class="fas fa-table me-1"></i>
-        {%if valor == "datatable1"%}
-        Productos por actualizar
-        {%elif valor == "datatable2"%}
-        Productos actualizados
-        {%elif valor == "datatable3"%}
-        Productos creados
-        {%endif%}
-    </div>
-    <div class="card-body">
-        <table id="{{valor}}" class="display">
-            <thead>
-                <tr>
-                    <th>Tienda</th>
-                    <th>Fashion</th>
-                    <th>Kid</th>
-                    <th>Pets</th>
-                    <th>Houseful</th>
-                    <th>Electro</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>6pm</td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaFashion.1}}
-                        {%elif valor == "datatable2"%}
-                        {{listaFashion.8}}
-                        {%elif valor == "datatable3"%}
-                        {{listaFashion.15}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaKid.1}}
-                        {%elif valor == "datatable2"%}
-                        {{listaKid.8}}
-                        {%elif valor == "datatable3"%}
-                        {{listaKid.15}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaPets.1}}
-                        {%elif valor == "datatable2"%}
-                        {{listaPets.8}}
-                        {%elif valor == "datatable3"%}
-                        {{listaPets.15}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaHouseful.1}}
-                        {%elif valor == "datatable2"%}
-                        {{listaHouseful.8}}
-                        {%elif valor == "datatable3"%}
-                        {{listaHouseful.15}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaElectro.1}}
-                        {%elif valor == "datatable2"%}
-                        {{listaElectro.8}}
-                        {%elif valor == "datatable3"%}
-                        {{listaElectro.15}}
-                        {%endif%}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Amazon</td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaFashion.2}}
-                        {%elif valor == "datatable2"%}
-                        {{listaFashion.9}}
-                        {%elif valor == "datatable3"%}
-                        {{listaFashion.16}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaKid.2}}
-                        {%elif valor == "datatable2"%}
-                        {{listaKid.9}}
-                        {%elif valor == "datatable3"%}
-                        {{listaKid.16}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaPets.2}}
-                        {%elif valor == "datatable2"%}
-                        {{listaPets.9}}
-                        {%elif valor == "datatable3"%}
-                        {{listaPets.16}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaHouseful.2}}
-                        {%elif valor == "datatable2"%}
-                        {{listaHouseful.9}}
-                        {%elif valor == "datatable3"%}
-                        {{listaHouseful.16}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaElectro.2}}
-                        {%elif valor == "datatable2"%}
-                        {{listaElectro.9}}
-                        {%elif valor == "datatable3"%}
-                        {{listaElectro.16}}
-                        {%endif%}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Ebay</td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaFashion.3}}
-                        {%elif valor == "datatable2"%}
-                        {{listaFashion.10}}
-                        {%elif valor == "datatable3"%}
-                        {{listaFashion.17}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaKid.3}}
-                        {%elif valor == "datatable2"%}
-                        {{listaKid.10}}
-                        {%elif valor == "datatable3"%}
-                        {{listaKid.17}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaPets.3}}
-                        {%elif valor == "datatable2"%}
-                        {{listaPets.10}}
-                        {%elif valor == "datatable3"%}
-                        {{listaPets.17}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaHouseful.3}}
-                        {%elif valor == "datatable2"%}
-                        {{listaHouseful.10}}
-                        {%elif valor == "datatable3"%}
-                        {{listaHouseful.17}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaElectro.3}}
-                        {%elif valor == "datatable2"%}
-                        {{listaElectro.10}}
-                        {%elif valor == "datatable3"%}
-                        {{listaElectro.17}}
-                        {%endif%}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Footlocker</td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaFashion.4}}
-                        {%elif valor == "datatable2"%}
-                        {{listaFashion.11}}
-                        {%elif valor == "datatable3"%}
-                        {{listaFashion.18}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaKid.4}}
-                        {%elif valor == "datatable2"%}
-                        {{listaKid.11}}
-                        {%elif valor == "datatable3"%}
-                        {{listaKid.18}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaPets.4}}
-                        {%elif valor == "datatable2"%}
-                        {{listaPets.11}}
-                        {%elif valor == "datatable3"%}
-                        {{listaPets.18}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaHouseful.4}}
-                        {%elif valor == "datatable2"%}
-                        {{listaHouseful.11}}
-                        {%elif valor == "datatable3"%}
-                        {{listaHouseful.18}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaElectro.4}}
-                        {%elif valor == "datatable2"%}
-                        {{listaElectro.11}}
-                        {%elif valor == "datatable3"%}
-                        {{listaElectro.18}}
-                        {%endif%}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nike</td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaFashion.5}}
-                        {%elif valor == "datatable2"%}
-                        {{listaFashion.12}}
-                        {%elif valor == "datatable3"%}
-                        {{listaFashion.19}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaKid.5}}
-                        {%elif valor == "datatable2"%}
-                        {{listaKid.12}}
-                        {%elif valor == "datatable3"%}
-                        {{listaKid.19}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaPets.5}}
-                        {%elif valor == "datatable2"%}
-                        {{listaPets.12}}
-                        {%elif valor == "datatable3"%}
-                        {{listaPets.19}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaHouseful.5}}
-                        {%elif valor == "datatable2"%}
-                        {{listaHouseful.12}}
-                        {%elif valor == "datatable3"%}
-                        {{listaHouseful.19}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaElectro.5}}
-                        {%elif valor == "datatable2"%}
-                        {{listaElectro.12}}
-                        {%elif valor == "datatable3"%}
-                        {{listaElectro.19}}
-                        {%endif%}
-                    </td>
-                </tr>
-                <tr>
-                    <td>Zappos</td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaFashion.6}}
-                        {%elif valor == "datatable2"%}
-                        {{listaFashion.13}}
-                        {%elif valor == "datatable3"%}
-                        {{listaFashion.20}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaKid.6}}
-                        {%elif valor == "datatable2"%}
-                        {{listaKid.13}}
-                        {%elif valor == "datatable3"%}
-                        {{listaKid.20}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaPets.6}}
-                        {%elif valor == "datatable2"%}
-                        {{listaPets.13}}
-                        {%elif valor == "datatable3"%}
-                        {{listaPets.20}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaHouseful.6}}
-                        {%elif valor == "datatable2"%}
-                        {{listaHouseful.13}}
-                        {%elif valor == "datatable3"%}
-                        {{listaHouseful.20}}
-                        {%endif%}
-                    </td>
-                    <td>
-                        {%if valor == "datatable1"%}
-                        {{listaElectro.6}}
-                        {%elif valor == "datatable2"%}
-                        {{listaElectro.13}}
-                        {%elif valor == "datatable3"%}
-                        {{listaElectro.20}}
-                        {%endif%}
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td><b>General</b></td>
-                    <td>
-                        <b>
-                            {%if valor == "datatable1"%}
-                            {{listaFashion.0}}
-                            {%elif valor == "datatable2"%}
-                            {{listaFashion.7}}
-                            {%elif valor == "datatable3"%}
-                            {{listaFashion.14}}
-                            {%endif%}
-                        </b>
-                    </td>
-                    <td>
-                        <b>
-                            {%if valor == "datatable1"%}
-                            {{listaKid.0}}
-                            {%elif valor == "datatable2"%}
-                            {{listaKid.7}}
-                            {%elif valor == "datatable3"%}
-                            {{listaKid.14}}
-                            {%endif%}
-                        </b>
-                    </td>
-                    <td>
-                        <b>
-                            {%if valor == "datatable1"%}
-                            {{listaPets.0}}
-                            {%elif valor == "datatable2"%}
-                            {{listaPets.7}}
-                            {%elif valor == "datatable3"%}
-                            {{listaPets.14}}
-                            {%endif%}
-                        </b>
-                    </td>
-                    <td>
-                        <b>
-                            {%if valor == "datatable1"%}
-                            {{listaHouseful.0}}
-                            {%elif valor == "datatable2"%}
-                            {{listaHouseful.7}}
-                            {%elif valor == "datatable3"%}
-                            {{listaHouseful.14}}
-                            {%endif%}
-                        </b>
-                    </td>
-                    <td>
-                        <b>
-                            {%if valor == "datatable1"%}
-                            {{listaElectro.0}}
-                            {%elif valor == "datatable2"%}
-                            {{listaElectro.7}}
-                            {%elif valor == "datatable3"%}
-                            {{listaElectro.14}}
-                            {%endif%}
-                        </b>
-                    </td>
-                </tr>
-            </tfoot>
-        </table>
-        <script type="text/javascript">
-        $(document).ready(function() {
-            $('#{{valor}}').DataTable({});
-        });
-        </script>
-    </div>
+  <div class="card-header">
+    <i class="fas fa-table me-1"></i>
+    {%if valor == "datatable1"%} Productos por actualizar {%elif valor ==
+    "datatable2"%} Productos actualizados {%elif valor == "datatable3"%}
+    Productos creados {%endif%}
+  </div>
+  <div class="card-body">
+    <table id="{{valor}}" class="display">
+      <thead>
+        <tr>
+          <th>Tienda</th>
+          <th>Fashion</th>
+          <th>Kid</th>
+          <th>Pets</th>
+          <th>Houseful</th>
+          <th>Electro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>6pm</td>
+          <td>
+            {%if valor == "datatable1"%} {{listaFashion.1}} {%elif valor ==
+            "datatable2"%} {{listaFashion.8}} {%elif valor == "datatable3"%}
+            {{listaFashion.15}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaKid.1}} {%elif valor ==
+            "datatable2"%} {{listaKid.8}} {%elif valor == "datatable3"%}
+            {{listaKid.15}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaPets.1}} {%elif valor ==
+            "datatable2"%} {{listaPets.8}} {%elif valor == "datatable3"%}
+            {{listaPets.15}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaHouseful.1}} {%elif valor ==
+            "datatable2"%} {{listaHouseful.8}} {%elif valor == "datatable3"%}
+            {{listaHouseful.15}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaElectro.1}} {%elif valor ==
+            "datatable2"%} {{listaElectro.8}} {%elif valor == "datatable3"%}
+            {{listaElectro.15}} {%endif%}
+          </td>
+        </tr>
+        <tr>
+          <td>Amazon</td>
+          <td>
+            {%if valor == "datatable1"%} {{listaFashion.2}} {%elif valor ==
+            "datatable2"%} {{listaFashion.9}} {%elif valor == "datatable3"%}
+            {{listaFashion.16}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaKid.2}} {%elif valor ==
+            "datatable2"%} {{listaKid.9}} {%elif valor == "datatable3"%}
+            {{listaKid.16}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaPets.2}} {%elif valor ==
+            "datatable2"%} {{listaPets.9}} {%elif valor == "datatable3"%}
+            {{listaPets.16}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaHouseful.2}} {%elif valor ==
+            "datatable2"%} {{listaHouseful.9}} {%elif valor == "datatable3"%}
+            {{listaHouseful.16}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaElectro.2}} {%elif valor ==
+            "datatable2"%} {{listaElectro.9}} {%elif valor == "datatable3"%}
+            {{listaElectro.16}} {%endif%}
+          </td>
+        </tr>
+        <tr>
+          <td>Ebay</td>
+          <td>
+            {%if valor == "datatable1"%} {{listaFashion.3}} {%elif valor ==
+            "datatable2"%} {{listaFashion.10}} {%elif valor == "datatable3"%}
+            {{listaFashion.17}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaKid.3}} {%elif valor ==
+            "datatable2"%} {{listaKid.10}} {%elif valor == "datatable3"%}
+            {{listaKid.17}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaPets.3}} {%elif valor ==
+            "datatable2"%} {{listaPets.10}} {%elif valor == "datatable3"%}
+            {{listaPets.17}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaHouseful.3}} {%elif valor ==
+            "datatable2"%} {{listaHouseful.10}} {%elif valor == "datatable3"%}
+            {{listaHouseful.17}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaElectro.3}} {%elif valor ==
+            "datatable2"%} {{listaElectro.10}} {%elif valor == "datatable3"%}
+            {{listaElectro.17}} {%endif%}
+          </td>
+        </tr>
+        <tr>
+          <td>Footlocker</td>
+          <td>
+            {%if valor == "datatable1"%} {{listaFashion.4}} {%elif valor ==
+            "datatable2"%} {{listaFashion.11}} {%elif valor == "datatable3"%}
+            {{listaFashion.18}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaKid.4}} {%elif valor ==
+            "datatable2"%} {{listaKid.11}} {%elif valor == "datatable3"%}
+            {{listaKid.18}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaPets.4}} {%elif valor ==
+            "datatable2"%} {{listaPets.11}} {%elif valor == "datatable3"%}
+            {{listaPets.18}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaHouseful.4}} {%elif valor ==
+            "datatable2"%} {{listaHouseful.11}} {%elif valor == "datatable3"%}
+            {{listaHouseful.18}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaElectro.4}} {%elif valor ==
+            "datatable2"%} {{listaElectro.11}} {%elif valor == "datatable3"%}
+            {{listaElectro.18}} {%endif%}
+          </td>
+        </tr>
+        <tr>
+          <td>Nike</td>
+          <td>
+            {%if valor == "datatable1"%} {{listaFashion.5}} {%elif valor ==
+            "datatable2"%} {{listaFashion.12}} {%elif valor == "datatable3"%}
+            {{listaFashion.19}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaKid.5}} {%elif valor ==
+            "datatable2"%} {{listaKid.12}} {%elif valor == "datatable3"%}
+            {{listaKid.19}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaPets.5}} {%elif valor ==
+            "datatable2"%} {{listaPets.12}} {%elif valor == "datatable3"%}
+            {{listaPets.19}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaHouseful.5}} {%elif valor ==
+            "datatable2"%} {{listaHouseful.12}} {%elif valor == "datatable3"%}
+            {{listaHouseful.19}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaElectro.5}} {%elif valor ==
+            "datatable2"%} {{listaElectro.12}} {%elif valor == "datatable3"%}
+            {{listaElectro.19}} {%endif%}
+          </td>
+        </tr>
+        <tr>
+          <td>Zappos</td>
+          <td>
+            {%if valor == "datatable1"%} {{listaFashion.6}} {%elif valor ==
+            "datatable2"%} {{listaFashion.13}} {%elif valor == "datatable3"%}
+            {{listaFashion.20}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaKid.6}} {%elif valor ==
+            "datatable2"%} {{listaKid.13}} {%elif valor == "datatable3"%}
+            {{listaKid.20}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaPets.6}} {%elif valor ==
+            "datatable2"%} {{listaPets.13}} {%elif valor == "datatable3"%}
+            {{listaPets.20}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaHouseful.6}} {%elif valor ==
+            "datatable2"%} {{listaHouseful.13}} {%elif valor == "datatable3"%}
+            {{listaHouseful.20}} {%endif%}
+          </td>
+          <td>
+            {%if valor == "datatable1"%} {{listaElectro.6}} {%elif valor ==
+            "datatable2"%} {{listaElectro.13}} {%elif valor == "datatable3"%}
+            {{listaElectro.20}} {%endif%}
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td><b>General</b></td>
+          <td>
+            <b>
+              {%if valor == "datatable1"%} {{listaFashion.0}} {%elif valor ==
+              "datatable2"%} {{listaFashion.7}} {%elif valor == "datatable3"%}
+              {{listaFashion.14}} {%endif%}
+            </b>
+          </td>
+          <td>
+            <b>
+              {%if valor == "datatable1"%} {{listaKid.0}} {%elif valor ==
+              "datatable2"%} {{listaKid.7}} {%elif valor == "datatable3"%}
+              {{listaKid.14}} {%endif%}
+            </b>
+          </td>
+          <td>
+            <b>
+              {%if valor == "datatable1"%} {{listaPets.0}} {%elif valor ==
+              "datatable2"%} {{listaPets.7}} {%elif valor == "datatable3"%}
+              {{listaPets.14}} {%endif%}
+            </b>
+          </td>
+          <td>
+            <b>
+              {%if valor == "datatable1"%} {{listaHouseful.0}} {%elif valor ==
+              "datatable2"%} {{listaHouseful.7}} {%elif valor == "datatable3"%}
+              {{listaHouseful.14}} {%endif%}
+            </b>
+          </td>
+          <td>
+            <b>
+              {%if valor == "datatable1"%} {{listaElectro.0}} {%elif valor ==
+              "datatable2"%} {{listaElectro.7}} {%elif valor == "datatable3"%}
+              {{listaElectro.14}} {%endif%}
+            </b>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#{{valor}}").DataTable({});
+      });
+    </script>
+  </div>
 </div>
 {%endfor%}
 <div class="row">
-    {%for valor in tablita2%}
-    <div class=" col-sm-12 col-md-12 col-lg-6 col-xl-6">
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                {%if valor == "datatable4"%}
-                Productos listos para subir a Mercado Libre
-                {%elif valor == "datatable5"%}
-                SKU's para correr en UploadSpider
-                {%endif%}
-            </div>
-            <div class="card-body">
-                <table id="{{valor}}" class="display">
-                    <thead>
-                        <tr>
-                            <th>Cuenta</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Fashion</td>
-                            <td>
-                                {%if valor == "datatable4"%}
-                                {{listaFashion.21}}
-                                {%elif valor == "datatable5"%}
-                                {{listaFashion.22}}
-                                {%endif%}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kid</td>
-                            <td>
-                                {%if valor == "datatable4"%}
-                                {{listaKid.21}}
-                                {%elif valor == "datatable5"%}
-                                {{listaKid.22}}
-                                {%endif%}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Pets</td>
-                            <td>
-                                {%if valor == "datatable4"%}
-                                {{listaPets.21}}
-                                {%elif valor == "datatable5"%}
-                                {{listaPets.22}}
-                                {%endif%}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Houseful</td>
-                            <td>
-                                {%if valor == "datatable4"%}
-                                {{listaHouseful.21}}
-                                {%elif valor == "datatable5"%}
-                                {{listaHouseful.22}}
-                                {%endif%}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Electro</td>
-                            <td>
-                                {%if valor == "datatable4"%}
-                                {{listaElectro.21}}
-                                {%elif valor == "datatable5"%}
-                                {{listaElectro.22}}
-                                {%endif%}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <script type="text/javascript">
-                $(document).ready(function() {
-                    $('#{{valor}}').DataTable({});
-                });
-                </script>
-            </div>
-        </div>
+  {%for valor in tablita2%}
+  <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+    <div class="card mb-4">
+      <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        {%if valor == "datatable4"%} Productos listos para subir a Mercado Libre
+        {%elif valor == "datatable5"%} SKU's para correr en UploadSpider
+        {%endif%}
+      </div>
+      <div class="card-body">
+        <table id="{{valor}}" class="display">
+          <thead>
+            <tr>
+              <th>Cuenta</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fashion</td>
+              <td>
+                {%if valor == "datatable4"%} {{listaFashion.21}} {%elif valor ==
+                "datatable5"%} {{listaFashion.22}} {%endif%}
+              </td>
+            </tr>
+            <tr>
+              <td>Kid</td>
+              <td>
+                {%if valor == "datatable4"%} {{listaKid.21}} {%elif valor ==
+                "datatable5"%} {{listaKid.22}} {%endif%}
+              </td>
+            </tr>
+            <tr>
+              <td>Pets</td>
+              <td>
+                {%if valor == "datatable4"%} {{listaPets.21}} {%elif valor ==
+                "datatable5"%} {{listaPets.22}} {%endif%}
+              </td>
+            </tr>
+            <tr>
+              <td>Houseful</td>
+              <td>
+                {%if valor == "datatable4"%} {{listaHouseful.21}} {%elif valor
+                == "datatable5"%} {{listaHouseful.22}} {%endif%}
+              </td>
+            </tr>
+            <tr>
+              <td>Electro</td>
+              <td>
+                {%if valor == "datatable4"%} {{listaElectro.21}} {%elif valor ==
+                "datatable5"%} {{listaElectro.22}} {%endif%}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <script type="text/javascript">
+          $(document).ready(function () {
+            $("#{{valor}}").DataTable({});
+          });
+        </script>
+      </div>
     </div>
-    {%endfor%}
+  </div>
+  {%endfor%}
 </div>
 {%endblock%}

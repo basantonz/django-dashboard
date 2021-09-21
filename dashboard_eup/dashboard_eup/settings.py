@@ -24,7 +24,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY") # this is to replace the secret key you cut away before
+# this is to replace the secret key you cut away before
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +84,11 @@ WSGI_APPLICATION = 'dashboard_eup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'reportes'
+        'NAME': 'reportes',
+        'CLIENT': {
+            'host': 'mongodb://melimongo:melimongo123@3.129.244.108:27017',
+            # 'host': 'mongodb://melimongo:melimongo123@localhost:27017',
+        }
     },
 }
 
@@ -130,3 +136,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'staticfiles'),
 )
+CRONJOBS = [
+    # ('*/5 * * * *', 'dash.crons.dashCrons.obtainAllData','>> /tmp/obtainAllData.log'),
+]
