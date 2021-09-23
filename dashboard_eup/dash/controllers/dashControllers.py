@@ -34,4 +34,7 @@ def ConvertirLista(cadena, type_of_cadena):
         if type_of_cadena == 'web':
             for i in range(23):
                 valores.append('APAGADO')
+        if type_of_cadena == 'grafica':
+            for i in range(23):
+                valores.append(0)
     return valores

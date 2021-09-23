@@ -9,10 +9,6 @@
   <meta name="description" content="Dashboard para Envios USA Perú" />
   <meta name="author" content="Joao Basanta" />
   <title>Dashboard - EUP Admin</title>
-  <style>
-
-
-  </style>
   <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <link href="{% static 'css/style1.css' %}" rel="stylesheet" />
   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
@@ -26,6 +22,8 @@
   <script src="{% static 'libraries/highchart/modules/exporting.js'%}"></script>
   <script src="{% static 'libraries/highchart/modules/export-data.js'%}"></script>
   <script src="{% static 'libraries/highchart/modules/accessibility.js'%}"></script>
+  <script src="{% static 'libraries/highchart/modules/pattern-fill.js'%}"></script>
+  <script src="{% static 'libraries/highchart/themes/high-contrast-light.js'%}"></script>
 </head>
 
 <body class="sb-nav-fixed" lang="es">
@@ -38,7 +36,7 @@
     <ul class="nav-list">
       <li>
         <i class='bx bx-search'></i>
-        <input type="text" placeholder="Search...">
+        <input type="text" placeholder="Buscar...">
         <span class="tooltip">buscar</span>
       </li>
       <li>
@@ -74,20 +72,6 @@
       </li>
       <li>
         <a href="#">
-          <i class='bx bx-chat'></i>
-          <span class="links_name">Mensajes</span>
-        </a>
-        <span class="tooltip">Mensajes</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-pie-chart-alt-2'></i>
-          <span class="links_name">Estadistica</span>
-        </a>
-        <span class="tooltip">Estadistica</span>
-      </li>
-      <li>
-        <a href="#">
           <i class='bx'>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-shop-window"
               viewBox="0 0 16 16">
@@ -98,7 +82,14 @@
           </i>
           <span class="links_name">Tiendas</span>
         </a>
-        <span class="tooltip">Tiendas</span>
+        <span class="tooltip ">Tiendas</span>
+        <ul class="sub-menu">
+          <li><a class="text-light"><i class="fas fa-tshirt"></i>&nbsp;&nbsp;Fashion</a></li>
+          <li><a class="text-light"><i class="fas fa-child"></i>&nbsp;&nbsp;Kid</a></li>
+          <li><a class="text-light"><i class="fas fa-paw"></i>&nbsp;&nbsp;Pets</a></li>
+          <li><a class="text-light"><i class="fas fa-house-user"></i>&nbsp;&nbsp;Houseful</a></li>
+          <li><a class="text-light"><i class="fas fa-laptop"></i>&nbsp;&nbsp;Electro</a></li>
+        </ul>
       </li>
 
 
@@ -119,16 +110,6 @@
           <span class="links_name">Configuracion</span>
         </a>
         <span class="tooltip">Configuracion</span>
-      </li>
-      <li class="profile">
-        <div class="profile-details">
-          <img src="profile.jpg" alt="profileImg">
-          <div class="name_job">
-            <div class="name">harol</div>
-            <div class="job">pruebas</div>
-          </div>
-        </div>
-        <i class='bx bx-log-out' id="log_out"></i>
       </li>
     </ul>
   </div>

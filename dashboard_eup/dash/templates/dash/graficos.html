@@ -1,78 +1,407 @@
-{%extends 'dash/layout.html'%} 
-{%load static%} 
+{%extends 'dash/layout.html'%}
+{%load static%}
+{% load mathfilters %}
 {%block body%}
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
       <div id="container"></div>
     </div>
+    <div class="col-12">
+      <h1 class="text-center py-4">Data de Electro</h1>
+    </div>
+    <div class="col-6">
+      <div id="container2"></div>
+    </div>
+    <div class="col-6">
+      <div id="container3"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div id="container4"></div>
+    </div>
+    <div class="col-6">
+      <div id="container5"></div>
+    </div>
   </div>
 </div>
 <script type="application/javascript">
-    Highcharts.chart('container', {
+  Highcharts.chart("container", {
     chart: {
-        type: 'column'
+      type: "column",
     },
     title: {
-        text: 'Monthly Average Rainfall'
+      text: "Reporte de Tiendas (Actualizados)",
     },
     subtitle: {
-        text: 'Source: WorldClimate.com'
+      text: "Mercado Libre",
     },
     xAxis: {
-        categories: [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
-            'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec'
-        ],
-        crosshair: true
+      categories: [
+        "Fashion",
+        "Kid",
+        "Pets",
+        "Houseful",
+        "Electro",
+      ],
+      crosshair: true,
     },
     yAxis: {
-        min: 0,
-        title: {
-            text: 'Rainfall (mm)'
-        }
+      min: 0,
+      title: {
+        text: "Productos Actualizados (PA)",
+      },
     },
     tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat:
+        '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+        '<td style="padding:0"><b>{point.y:.1f} PA</b></td></tr>',
+      footerFormat: "</table>",
+      shared: true,
+      useHTML: true,
     },
     plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
-        }
+      column: {
+        pointPadding: 0.2,
+        borderWidth: 0,
+      },
     },
-    series: [{
-        name: 'Tokyo',
-        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-
-    }, {
-        name: 'New York',
-        data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
-
-    }, {
-        name: 'London',
-        data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
-
-    }, {
-        name: 'Berlin',
-        data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
-
-    }]
-});
+    series: [
+      {
+        name: "6pm",
+        data: [
+          {{listaFashion.8}}, {{listaKid.8}}, {{listaPets.8}}, {{listaHouseful.8}}, {{listaElectro.8}},
+        ],
+      },
+      {
+        name: "Amazon",
+        data: [
+          {{listaFashion.9}}, {{listaKid.9}}, {{listaPets.9}}, {{listaHouseful.9}}, {{listaElectro.9}},
+        ],
+      },
+      {
+        name: "Ebay",
+        data: [
+          {{listaFashion.10}}, {{listaKid.10}}, {{listaPets.10}}, {{listaHouseful.10}}, {{listaElectro.10}},
+        ],
+      },
+      {
+        name: "Footlocker",
+        data: [
+          {{listaFashion.11}}, {{listaKid.11}}, {{listaPets.11}}, {{listaHouseful.11}}, {{listaElectro.11}},
+        ],
+      },
+      {
+        name: "Nike",
+        data: [
+          {{listaFashion.12}}, {{listaKid.12}}, {{listaPets.12}}, {{listaHouseful.12}}, {{listaElectro.12}},
+        ],
+      },
+      {
+        name: "Zappos",
+        data: [
+          {{listaFashion.13}}, {{listaKid.13}}, {{listaPets.13}}, {{listaHouseful.13}}, {{listaElectro.13}},
+        ],
+      },
+    ],
+  });
 </script>
-{%endblock%} 
+<script type="application/javascript">
+  Highcharts.chart("container2", {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie",
+    },
+    title: {
+      text: "Productos",
+    },
+    tooltip: {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b><br>",
+    },
+    accessibility: {
+      point: {
+        valueSuffix: "%",
+      },
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {
+          enabled: true,
+          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+        },
+      },
+    },
+    series: [
+      {
+        name: "Porcentaje",
+        colorByPoint: true,
+        data: [
+          {
+            name: "Actualizados",
+            y: {{listaElectro.7}},
+            sliced: true,
+            selected: true,
+          },
+          {
+            name: "Sin actualizar",
+            y: {{listaElectro.14|sub:listaElectro.7}},
+          },
+        ],
+      },
+    ],
+  });
+</script>
+<script type="application/javascript">
+  var clrs = Highcharts.getOptions().colors;
+  var pieColors = [clrs[2], clrs[0], clrs[3], clrs[1], clrs[4]];
+
+  // Get a default pattern, but using the pieColors above.
+  // The i-argument refers to which default pattern to use
+  function getPattern(i) {
+    return {
+      pattern: Highcharts.merge(Highcharts.patterns[i], {
+        color: pieColors[i],
+      }),
+    };
+  }
+
+  // Get 5 patterns
+  var patterns = [0, 1, 2, 3, 4].map(getPattern);
+
+  var chart = Highcharts.chart("container3", {
+    chart: {
+      type: "pie",
+    },
+
+    title: {
+      text: "Primary desktop/laptop screen readers",
+    },
+
+    subtitle: {
+      text: "Source: WebAIM. Click on point to visit official website",
+    },
+
+    colors: patterns,
+
+    tooltip: {
+      valueSuffix: "%",
+      borderColor: "#8ae",
+    },
+
+    plotOptions: {
+      series: {
+        dataLabels: {
+          enabled: true,
+          connectorColor: "#777",
+          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+        },
+        point: {
+          events: {
+            click: function () {
+              window.location.href = this.website;
+            },
+          },
+        },
+        cursor: "pointer",
+        borderWidth: 3,
+      },
+    },
+
+    series: [
+      {
+        name: "Screen reader usage",
+        data: [
+          {
+            name: "NVDA",
+            y: 40.6,
+            website: "https://www.nvaccess.org",
+            accessibility: {
+              description: "This is the most used desktop screen reader",
+            },
+          },
+          {
+            name: "JAWS",
+            y: 40.1,
+            website:
+              "https://www.freedomscientific.com/Products/Blindness/JAWS",
+          },
+          {
+            name: "VoiceOver",
+            y: 12.9,
+            website: "http://www.apple.com/accessibility/osx/voiceover",
+          },
+          {
+            name: "ZoomText",
+            y: 2,
+            website:
+              "http://www.zoomtext.com/products/zoomtext-magnifierreader",
+          },
+          {
+            name: "Other",
+            y: 4.4,
+            website:
+              "http://www.disabled-world.com/assistivedevices/computer/screen-readers.php",
+          },
+        ],
+      },
+    ],
+
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 500,
+          },
+          chartOptions: {
+            plotOptions: {
+              series: {
+                dataLabels: {
+                  format: "<b>{point.name}</b>",
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+  });
+
+  // Toggle patterns enabled
+  document.getElementById("patterns-enabled").onclick = function () {
+    chart.update({
+      colors: this.checked ? patterns : pieColors,
+    });
+  };
+</script>
+<script type="application/javascript">
+    Highcharts.setOptions({
+        colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
+            return {
+                radialGradient: {
+                    cx: 0.5,
+                    cy: 0.3,
+                    r: 0.7
+                },
+                stops: [
+                    [0, color],
+                    [1, Highcharts.color(color).brighten(-0.3).get('rgb')] // darken
+                ]
+            };
+        })
+    });
+
+    // Build the chart
+    Highcharts.chart('container4', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Browser market shares in January, 2018'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    connectorColor: 'silver'
+                }
+            }
+        },
+        series: [{
+            name: 'Share',
+            data: [
+                { name: 'Chrome', y: 61.41 },
+                { name: 'Internet Explorer', y: 11.84 },
+                { name: 'Firefox', y: 10.85 },
+                { name: 'Edge', y: 4.67 },
+                { name: 'Safari', y: 4.18 },
+                { name: 'Other', y: 7.05 }
+            ]
+        }]
+    });
+</script>
+<script type="application/javascript">
+          // Make monochrome colors
+  var pieColors = (function () {
+      var colors = [],
+          base = Highcharts.getOptions().colors[0],
+          i;
+
+      for (i = 0; i < 10; i += 1) {
+          // Start out with a darkened base color (negative brighten), and end
+          // up with a much brighter color
+          colors.push(Highcharts.color(base).brighten((i - 3) / 7).get());
+      }
+      return colors;
+  }());
+
+  // Build the chart
+  Highcharts.chart('container5', {
+      chart: {
+          plotBackgroundColor: null,
+          plotBorderWidth: null,
+          plotShadow: false,
+          type: 'pie'
+      },
+      title: {
+          text: 'Browser market shares at a specific website, 2014'
+      },
+      tooltip: {
+          pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      },
+      accessibility: {
+          point: {
+              valueSuffix: '%'
+          }
+      },
+      plotOptions: {
+          pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              colors: pieColors,
+              dataLabels: {
+                  enabled: true,
+                  format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                  distance: -50,
+                  filter: {
+                      property: 'percentage',
+                      operator: '>',
+                      value: 4
+                  }
+              }
+          }
+      },
+      series: [{
+          name: 'Share',
+          data: [
+              { name: 'Chrome', y: 61.41 },
+              { name: 'Internet Explorer', y: 11.84 },
+              { name: 'Firefox', y: 10.85 },
+              { name: 'Edge', y: 4.67 },
+              { name: 'Safari', y: 4.18 },
+              { name: 'Other', y: 7.05 }
+          ]
+      }]
+  });
+</script>
+
+{%endblock%}
