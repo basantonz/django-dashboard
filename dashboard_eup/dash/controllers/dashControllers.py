@@ -32,9 +32,9 @@ def ConvertirLista(cadena, type_of_cadena):
             print(lista[llave])
     except Exception as e:
         if type_of_cadena == 'web':
-            for i in range(23):
+            for i in range(24):
                 valores.append('APAGADO')
         if type_of_cadena == 'grafica':
-            for i in range(23):
+            for i in range(24):
                 valores.append(0)
     return valores
