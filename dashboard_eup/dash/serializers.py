@@ -71,6 +71,7 @@ class DashboardSerializerFashion(serializers.ModelSerializer):
             "zappos_creados",
             "listos_subir_meli",
             "listos_subir_zyte",
+            "all_products",
             "fecha"
         ]
 
@@ -111,6 +112,7 @@ class DashboardSerializerHouseful (serializers.ModelSerializer):
             "zappos_creados",
             "listos_subir_meli",
             "listos_subir_zyte",
+            "all_products",
             "fecha"
         ]
 
@@ -151,6 +153,7 @@ class DashboardSerializerKid(serializers.ModelSerializer):
             "zappos_creados",
             "listos_subir_meli",
             "listos_subir_zyte",
+            "all_products",
             "fecha"
         ]
 
@@ -191,6 +194,7 @@ class DashboardSerializerPets(serializers.ModelSerializer):
             "zappos_creados",
             "listos_subir_meli",
             "listos_subir_zyte",
+            "all_products",
             "fecha"
         ]
 
