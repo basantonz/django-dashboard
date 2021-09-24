@@ -31,6 +31,7 @@ class DashboardSerializerElectro(serializers.ModelSerializer):
             "zappos_creados",
             "listos_subir_meli",
             "listos_subir_zyte",
+            "all_products",
             "fecha"
         ]
 
