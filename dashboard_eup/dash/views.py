@@ -41,7 +41,7 @@ def home(request):
                }
     return render(request, "dash/home.html", context)
 
-def graficos(request):
+def tiendas(request):
     FashionAllArr=ConvertirLista2("fashion",6)
     KidAllArr=ConvertirLista2("kid",6)
     PetsAllArr=ConvertirLista2("pets",6)
@@ -54,4 +54,39 @@ def graficos(request):
                 'HousefulAllArr': HousefulAllArr,
                 'ElectroAllArr': ElectroAllArr 
                }
-    return render(request, "dash/graficos.html",context)
+    return render(request, "dash/tiendas.html",context)
+
+def fashion(request):
+    FashionAllArr=ConvertirLista2("fashion",6)
+    context = {'FashionAllArr': FashionAllArr,}
+    return render(request, "dash/tiendas/fashion.html",context)
+
+def kid(request):
+    KidAllArr=ConvertirLista2("kid",6)
+    context = {'KidAllArr': KidAllArr,}
+    return render(request, "dash/tiendas/kid.html",context)
+
+def pets(request):
+    PetsAllArr=ConvertirLista2("pets",6)
+    context = {'PetsAllArr': PetsAllArr,}
+    return render(request, "dash/tiendas/pets.html",context)
+
+def houseful(request):
+    HousefulAllArr=ConvertirLista2("houseful",6)
+    context = {'HousefulAllArr': HousefulAllArr,}
+    return render(request, "dash/tiendas/houseful.html",context)
+
+def electro(request):
+    ElectroAllArr=ConvertirLista2("electro",6)
+    context = {'ElectroAllArr': ElectroAllArr,}
+    return render(request, "dash/tiendas/electro.html",context)
+
+def configuracion(request):
+    a='a'
+    context = {'a': a,}
+    return render(request, "dash/configuracion.html",context)
+
+def usuarios(request):
+    a='a'
+    context = {'a': a,}
+    return render(request, "dash/usuarios.html",context)

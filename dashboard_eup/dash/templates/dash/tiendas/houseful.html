@@ -1,0 +1,215 @@
+{%extends 'dash/layout.html'%}
+{%load static%}
+{% load mathfilters %}
+{%block body%}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center py-4">Data de Houseful</h1>
+    </div>
+    <div class="col-6">
+      <div id="container1"></div>
+    </div>  
+    <div class="col-6">
+      <div id="container2"></div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <div id="container3"></div>
+    </div>
+  </div>
+</div>
+
+<script type="application/javascript">
+  Highcharts.chart("container1", {
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie",
+    },
+    title: {
+      text: "Actualizaciones de Productos",
+    },
+    tooltip: {
+      pointFormat: "{series.name}: <b>{point.y}</b><br>",
+    },
+    accessibility: {
+      point: {
+        valueSuffix: "%",
+      },
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {
+          enabled: true,
+          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+        },
+      },
+    },
+    series: [
+      {
+        name: "Cantidad",
+        colorByPoint: true,
+        data: [
+          {
+            name: "Actualizados",
+            y: {{HousefulAllArr.7}},
+            sliced: true,
+            selected: true,
+          },
+          {
+            name: "Sin actualizar",
+            y: {{HousefulAllArr.14|sub:HousefulAllArr.7}},
+          },
+        ],
+      },
+    ],
+  });
+</script>
+<script type="application/javascript">
+  var clrs = Highcharts.getOptions().colors;
+  var pieColors = [clrs[2], clrs[0], clrs[3], clrs[1], clrs[4]];
+
+  // Get a default pattern, but using the pieColors above.
+  // The i-argument refers to which default pattern to use
+  function getPattern(i) {
+    return {
+      pattern: Highcharts.merge(Highcharts.patterns[i], {
+        color: pieColors[i],
+      }),
+    };
+  }
+
+  // Get 5 patterns
+  var patterns = [0, 1, 2, 3, 4].map(getPattern);
+
+  var chart = Highcharts.chart("container2", {
+    chart: {
+      type: "pie",
+    },
+
+    title: {
+      text: "Scrapeo de productos",
+    },
+
+    colors: patterns,
+
+    tooltip: {
+        pointFormat: "{series.name}: <b>{point.y}</b><br>",
+        borderColor: "#8ae",
+    },
+
+    plotOptions: {
+      series: {
+        dataLabels: {
+          enabled: true,
+          connectorColor: "#777",
+          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+        },
+        cursor: "pointer",
+        borderWidth: 3,
+      },
+    },
+
+    series: [
+      {
+        name: "Cantidad",
+        colorByPoint: true,
+        data: [
+          {
+            name: "Listos para MercadoLibre",
+            y: {{HousefulAllArr.21}},
+            sliced: true,
+            selected: true,
+          },
+          {
+            name: "Scrapeados",
+            y: {{HousefulAllArr.22}},
+          },
+        ],
+      },
+    ],
+
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 500,
+          },
+          chartOptions: {
+            plotOptions: {
+              series: {
+                dataLabels: {
+                  format: "<b>{point.name}</b>",
+                },
+              },
+            },
+          },
+        },
+      ],
+    },
+  });
+
+</script>
+<script type="application/javascript">
+    Highcharts.setOptions({
+        colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
+            return {
+                radialGradient: {
+                    cx: 0.5,
+                    cy: 0.3,
+                    r: 0.7
+                },
+                stops: [
+                    [0, color],
+                    [1, Highcharts.color(color).brighten(-0.3).get('rgb')] // darken
+                ]
+            };
+        })
+    });
+
+    // Build the chart
+    Highcharts.chart('container3', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Subida de productos'
+        },
+        tooltip: {
+            pointFormat: "{series.name}: <b>{point.y}</b><br>",
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    connectorColor: 'silver'
+                }
+            }
+        },
+        series: [{
+            name: 'Cantidad',
+            data: [
+                { name: 'Subidos', y: {{HousefulAllArr.14}} },
+                { name: 'Por subir', y: {{HousefulAllArr.21}} }
+            ]
+        }]
+    });
+</script>
+{%endblock%}
