@@ -44,6 +44,7 @@ def obtainAllData():
         "zappos_creados": listaFashion[20],
         "listos_subir_meli": listaFashion[21],
         "listos_subir_zyte": listaFashion[22],
+        "all_products": listaFashion[23],
         "fecha": datetime.datetime.now()
     }
 
@@ -71,6 +72,7 @@ def obtainAllData():
         "zappos_creados": listaKid[20],
         "listos_subir_meli": listaKid[21],
         "listos_subir_zyte": listaKid[22],
+        "all_products": listaKid[23],
         "fecha": datetime.datetime.now()
     }
     body_pets = {
@@ -97,6 +99,7 @@ def obtainAllData():
         "zappos_creados": listaPets[20],
         "listos_subir_meli": listaPets[21],
         "listos_subir_zyte": listaPets[22],
+        "all_products": listaPets[23],
         "fecha": datetime.datetime.now()
     }
     body_houseful = {
@@ -123,6 +126,7 @@ def obtainAllData():
         "zappos_creados": listaHouseful[20],
         "listos_subir_meli": listaHouseful[21],
         "listos_subir_zyte": listaHouseful[22],
+        "all_products": listaHouseful[23],
         "fecha": datetime.datetime.now()
     }
     body_electro = {
@@ -149,6 +153,7 @@ def obtainAllData():
         "zappos_creados": listaElectro[20],
         "listos_subir_meli": listaElectro[21],
         "listos_subir_zyte": listaElectro[22],
+        "all_products": listaElectro[23],
         "fecha": datetime.datetime.now()
     }
     saveFashion = save_service.savedash(body_fashion, "fashion")
@@ -167,9 +172,9 @@ def ConvertirLista(cadena, type_of_cadena):
             valores.append(lista[llave])
     except Exception as e:
         if type_of_cadena == 'web':
-            for i in range(23):
+            for i in range(24):
                 valores.append('APAGADO')
         else:
-            for i in range(23):
+            for i in range(24):
                 valores.append(None)
     return valores

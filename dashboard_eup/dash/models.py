@@ -32,6 +32,7 @@ class Electro(models.Model):
 
     listos_subir_meli = models.IntegerField(null=True)
     listos_subir_zyte = models.IntegerField(null=True)
+    all_products = models.IntegerField(null=True)
     fecha = models.DateTimeField(null=True)
 
     class meta:
@@ -66,6 +67,7 @@ class Fashion(models.Model):
 
     listos_subir_meli = models.IntegerField(null=True)
     listos_subir_zyte = models.IntegerField(null=True)
+    all_products = models.IntegerField(null=True)
     fecha = models.DateTimeField(auto_now_add=True)
 
     class meta:
@@ -100,6 +102,7 @@ class Houseful(models.Model):
 
     listos_subir_meli = models.IntegerField(null=True)
     listos_subir_zyte = models.IntegerField(null=True)
+    all_products = models.IntegerField(null=True)
     fecha = models.DateTimeField(auto_now_add=True)
 
     class meta:
@@ -134,6 +137,7 @@ class Kid(models.Model):
 
     listos_subir_meli = models.IntegerField(null=True)
     listos_subir_zyte = models.IntegerField(null=True)
+    all_products = models.IntegerField(null=True)
     fecha = models.DateTimeField(auto_now_add=True)
 
     class meta:
@@ -168,6 +172,7 @@ class Pets(models.Model):
 
     listos_subir_meli = models.IntegerField(null=True)
     listos_subir_zyte = models.IntegerField(null=True)
+    all_products = models.IntegerField(null=True)
     fecha = models.DateTimeField(auto_now_add=True)
 
     class meta:

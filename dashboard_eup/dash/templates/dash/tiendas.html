@@ -4,25 +4,12 @@
 {%block body%}
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12"><h1 class="text-center pt-2">DATOS DE TIENDAS</h1></div>
+    <div class="col-12 my-3">
       <div id="container"></div>
     </div>
     <div class="col-12">
-      <h1 class="text-center py-4">Data de Electro</h1>
-    </div>
-    <div class="col-6">
-      <div id="container2"></div>
-    </div>
-    <div class="col-6">
-      <div id="container3"></div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <div id="container4"></div>
-    </div>
-    <div class="col-6">
-      <div id="container5"></div>
+      <div id="container6"></div>
     </div>
   </div>
 </div>
@@ -72,37 +59,37 @@
       {
         name: "6pm",
         data: [
-          {{listaFashion.8}}, {{listaKid.8}}, {{listaPets.8}}, {{listaHouseful.8}}, {{listaElectro.8}},
+          {{FashionAllArr.7}}, {{KidAllArr.8}}, {{PetsAllArr.8}}, {{HousefulAllArr.8}}, {{ElectroAllArr.8}},
         ],
       },
       {
         name: "Amazon",
         data: [
-          {{listaFashion.9}}, {{listaKid.9}}, {{listaPets.9}}, {{listaHouseful.9}}, {{listaElectro.9}},
+          {{FashionAllArr.9}}, {{KidAllArr.9}}, {{PetsAllArr.9}}, {{HousefulAllArr.9}}, {{ElectroAllArr.9}},
         ],
       },
       {
         name: "Ebay",
         data: [
-          {{listaFashion.10}}, {{listaKid.10}}, {{listaPets.10}}, {{listaHouseful.10}}, {{listaElectro.10}},
+          {{FashionAllArr.10}}, {{KidAllArr.10}}, {{PetsAllArr.10}}, {{HousefulAllArr.10}}, {{ElectroAllArr.10}},
         ],
       },
       {
         name: "Footlocker",
         data: [
-          {{listaFashion.11}}, {{listaKid.11}}, {{listaPets.11}}, {{listaHouseful.11}}, {{listaElectro.11}},
+          {{FashionAllArr.11}}, {{KidAllArr.11}}, {{PetsAllArr.11}}, {{HousefulAllArr.11}}, {{ElectroAllArr.11}},
         ],
       },
       {
         name: "Nike",
         data: [
-          {{listaFashion.12}}, {{listaKid.12}}, {{listaPets.12}}, {{listaHouseful.12}}, {{listaElectro.12}},
+          {{FashionAllArr.12}}, {{KidAllArr.12}}, {{PetsAllArr.12}}, {{HousefulAllArr.12}}, {{ElectroAllArr.12}},
         ],
       },
       {
         name: "Zappos",
         data: [
-          {{listaFashion.13}}, {{listaKid.13}}, {{listaPets.13}}, {{listaHouseful.13}}, {{listaElectro.13}},
+          {{FashionAllArr.13}}, {{KidAllArr.13}}, {{PetsAllArr.13}}, {{HousefulAllArr.13}}, {{ElectroAllArr.13}},
         ],
       },
     ],
@@ -120,7 +107,7 @@
       text: "Productos",
     },
     tooltip: {
-      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b><br>",
+      pointFormat: "{series.name}: <b>{point.y}</b><br>",
     },
     accessibility: {
       point: {
@@ -139,18 +126,18 @@
     },
     series: [
       {
-        name: "Porcentaje",
+        name: "Cantidad",
         colorByPoint: true,
         data: [
           {
             name: "Actualizados",
-            y: {{listaElectro.7}},
+            y: {{ElectroAllArr.7}},
             sliced: true,
             selected: true,
           },
           {
             name: "Sin actualizar",
-            y: {{listaElectro.14|sub:listaElectro.7}},
+            y: {{ElectroAllArr.14|sub:ElectroAllArr.7}},
           },
         ],
       },
@@ -403,5 +390,76 @@
       }]
   });
 </script>
+<script type="application/javascript">
+Highcharts.chart('container6', {
 
+    title: {
+        text: 'Productos Subidos a Mercado Libre'
+    },
+
+    subtitle: {
+        text: 'Por Tiendas'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Productos Subidos'
+        }
+    },
+
+    xAxis: {
+        accessibility: {
+            rangeDescription: 'Por horas'
+        }
+    },
+
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 1
+        }
+    },
+
+    series: [{
+        name: 'Fashion',
+        data: [{{FashionAllArr.14}}, {{FashionAllArr.38}},{{FashionAllArr.62}},{{FashionAllArr.86}}, {{FashionAllArr.110}},{{FashionAllArr.134}}]
+    }, {
+        name: 'Kid',
+        data: [{{KidAllArr.14}}, {{KidAllArr.38}},{{KidAllArr.62}},{{KidAllArr.86}}, {{KidAllArr.110}},{{KidAllArr.134}}]
+    }, {
+        name: 'Pets',
+        data: [{{PetsAllArr.14}}, {{PetsAllArr.38}},{{PetsAllArr.62}},{{PetsAllArr.86}}, {{PetsAllArr.110}},{{PetsAllArr.134}}]
+    }, {
+        name: 'Houseful',
+        data: [{{HousefulAllArr.14}}, {{HousefulAllArr.38}},{{HousefulAllArr.62}},{{HousefulAllArr.86}}, {{HousefulAllArr.110}},{{HousefulAllArr.134}}]
+    }, {
+        name: 'Electro',
+        data: [{{ElectroAllArr.14}}, {{ElectroAllArr.38}},{{ElectroAllArr.62}},{{ElectroAllArr.86}}, {{ElectroAllArr.110}},{{ElectroAllArr.134}}]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+</script>
 {%endblock%}
