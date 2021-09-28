@@ -9,9 +9,9 @@ from dash.models import Fashion, Kid, Pets, Houseful, Electro
 
 @api_view(['GET'])
 def obtainAllData(request):
-    cadenaFashion = 'http://ec2-18-222-217-205.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaKid = 'http://ec2-3-136-157-90.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaPets = 'http://ec2-3-22-61-127.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaFashion = 'http://ec2-3-137-143-15.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaKid = 'http://ec2-18-118-170-239.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaPets = 'http://ec2-3-133-83-99.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
     cadenaHouseful = ''
     cadenaElectro = 'http://ec2-3-139-57-54.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
 
