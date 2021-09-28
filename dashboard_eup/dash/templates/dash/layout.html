@@ -32,11 +32,11 @@
   <span style="color: white">
       
     </span>
-    <span class="logo-details" style:"color: white">
+    <span class="logo-details link_name" style:"color: white">
     <i class='bx bx-menu fa-2x' ></i><br>
-      <a class="text-decoration-none pb-2" href="/"><div class="logo_name text-decoration-none">
+      <div class="logo_name text-decoration-none">
         <img class="pull-left pt-2" src="{% static 'img/EnviosUsaPeru.png'%}"  alt="Logo" width="140px" height="55px">
-      </div></a>
+      </div>
     </span>
     <ul class="nav-links">
       <li>
@@ -104,21 +104,17 @@
       <li>
 </ul>
   </div>
-  <section class="home-section">
-    <div id="layoutSidenav_content">
-      <main>
+    <div id="layoutSidenav_content" class="fondo">
         <div class="container-fluid px-4">
           {%block body%}
           {%endblock%}
         </div>
-      </main>
         <div class="container-fluid px-4">
           <div class="d-flex align-items-center justify-content-between small">
             <div class="text-muted">Copyright &copy; Envios USA Perú 2021</div>
           </div>
         </div>
     </div>
-  </section>
   </div>
   <script src="{%static 'javascript/bootstrap.bundle.min.js'%}"></script>
   <script src="{%static 'javascript/scripts.js'%}"></script>
