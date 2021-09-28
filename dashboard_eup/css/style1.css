@@ -41,13 +41,11 @@
   font-weight: 600;
   transition: 0.3s ease;
   transition-delay: 0.1s;
-  cursor: pointer;
 }
 .sidebar.close .logo-details .logo_name{
   transition-delay: 0s;
   opacity: 0;
   pointer-events: none;
-  cursor: pointer;
 }
 .sidebar .nav-links{
   height: 100%;
@@ -66,7 +64,7 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: #1d1b31;
+  background: #a20e0e;
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -109,8 +107,8 @@
 }
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
-  margin-top: -10px;
-  background: #1d1b31;
+  margin-top: 0px;
+  background: #922525;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -126,6 +124,8 @@
 }
 .sidebar .nav-links li .sub-menu a:hover{
   opacity: 1;
+  background-color: #922525;
+  cursor: pointer;
 }
 .sidebar.close .nav-links li .sub-menu{
   position: absolute;
@@ -214,7 +214,7 @@
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  background: #ffffff;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
@@ -246,9 +246,4 @@
   .sidebar.close .nav-links li .sub-menu{
     display: none;
   }
-}
-
-.nounderline {
-  text-decoration: none !important;
-  color: white !important;
 }
