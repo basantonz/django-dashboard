@@ -12,7 +12,7 @@
   left: 0;
   height: 100%;
   width: 260px;
-  background: #100542;
+  background: #922525;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -24,6 +24,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .sidebar .logo-details i{
   font-size: 30px;
@@ -32,6 +33,7 @@
   min-width: 78px;
   text-align: center;
   line-height: 50px;
+  cursor: pointer;
 }
 .sidebar .logo-details .logo_name{
   font-size: 22px;
@@ -62,7 +64,7 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: #1d1b31;
+  background: #a20e0e;
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -105,8 +107,8 @@
 }
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
-  margin-top: -10px;
-  background: #1d1b31;
+  margin-top: 0px;
+  background: #922525;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -122,6 +124,8 @@
 }
 .sidebar .nav-links li .sub-menu a:hover{
   opacity: 1;
+  background-color: #922525;
+  cursor: pointer;
 }
 .sidebar.close .nav-links li .sub-menu{
   position: absolute;
