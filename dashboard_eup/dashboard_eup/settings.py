@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'reportes',
         'CLIENT': {
-            'host': 'mongodb://melimongo:melimongo123@3.129.244.108:27017',
+            'host': 'mongodb://melimongo:melimongo123@18.219.115.128:27017',
             # 'host': 'mongodb://melimongo:melimongo123@localhost:27017',
         }
     },
