@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-      <h1 class="text-center py-4">Data de Houseful</h1>
+      <h1 class="text-center py-4">Data de Kids</h1>
     </div>
     <div class="col-6">
       <div id="container1"></div>
@@ -58,13 +58,13 @@
         data: [
           {
             name: "Actualizados",
-            y: {{HousefulAllArr.7}},
+            y: {{KidsAllArr.7}},
             sliced: true,
             selected: true,
           },
           {
             name: "Sin actualizar",
-            y: {{HousefulAllArr.14|sub:HousefulAllArr.7}},
+            y: {{KidsAllArr.14|sub:KidsAllArr.7}},
           },
         ],
       },
@@ -123,13 +123,13 @@
         data: [
           {
             name: "Listos para MercadoLibre",
-            y: {{HousefulAllArr.21}},
+            y: {{KidsAllArr.21}},
             sliced: true,
             selected: true,
           },
           {
             name: "Scrapeados",
-            y: {{HousefulAllArr.22}},
+            y: {{KidsAllArr.22}},
           },
         ],
       },
@@ -206,8 +206,8 @@
         series: [{
             name: 'Cantidad',
             data: [
-                { name: 'Subidos', y: {{HousefulAllArr.14}} },
-                { name: 'Por subir', y: {{HousefulAllArr.21}} }
+                { name: 'Subidos', y: {{KidsAllArr.14}} },
+                { name: 'Por subir', y: {{KidsAllArr.21}} }
             ]
         }]
     });

@@ -86,9 +86,9 @@ class DashboardSerializerFashion(serializers.ModelSerializer):
         return datosFashion
 
 
-class DashboardSerializerHouseful (serializers.ModelSerializer):
+class DashboardSerializerHouseHome (serializers.ModelSerializer):
     class Meta:
-        model = Houseful
+        model = HouseHome
         fields = [
             "actualizar",
             "sixpm_actualizar",
@@ -121,15 +121,15 @@ class DashboardSerializerHouseful (serializers.ModelSerializer):
         print("Guardamos la data")
         pprint(validated_data)
         try:
-            datosHouseful = Houseful.objects.create(**validated_data)
+            datosHouseHome = HouseHome.objects.create(**validated_data)
         except Exception as e:
             print(e)
-        return datosHouseful
+        return datosHouseHome
 
 
-class DashboardSerializerKid(serializers.ModelSerializer):
+class DashboardSerializerKids(serializers.ModelSerializer):
     class Meta:
-        model = Kid
+        model = Kids
         fields = [
             "actualizar",
             "sixpm_actualizar",
@@ -162,15 +162,15 @@ class DashboardSerializerKid(serializers.ModelSerializer):
         print("Guardamos la data")
         pprint(validated_data)
         try:
-            datosKid = Kid.objects.create(**validated_data)
+            datosKids = Kids.objects.create(**validated_data)
         except Exception as e:
             print(e)
-        return datosKid
+        return datosKids
 
 
-class DashboardSerializerPets(serializers.ModelSerializer):
+class DashboardSerializerBeautyHealth(serializers.ModelSerializer):
     class Meta:
-        model = Pets
+        model = BeautyHealth
         fields = [
             "actualizar",
             "sixpm_actualizar",
@@ -203,7 +203,7 @@ class DashboardSerializerPets(serializers.ModelSerializer):
         print("Guardamos la data")
         pprint(validated_data)
         try:
-            datosPets = Pets.objects.create(**validated_data)
+            datosBeautyHealth = BeautyHealth.objects.create(**validated_data)
         except Exception as e:
             print(e)
-        return datosPets
+        return datosBeautyHealth

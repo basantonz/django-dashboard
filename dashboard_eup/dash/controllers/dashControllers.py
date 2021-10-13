@@ -4,21 +4,21 @@ import json
 from dash.models import *
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from dash.models import Fashion, Kid, Pets, Houseful, Electro
+from dash.models import Fashion, Kids, BeautyHealth, HouseHome, Electro
 
 
 @api_view(['GET'])
 def obtainAllData(request):
     cadenaFashion = 'http://ec2-3-137-143-15.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaKid = 'http://ec2-3-144-150-219.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaPets = 'http://ec2-3-133-83-99.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaHouseful = ''
+    cadenaKids = 'http://ec2-3-144-150-219.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaBeautyHealth = 'http://ec2-3-133-83-99.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaHouseHome = ''
     cadenaElectro = 'http://ec2-18-118-170-239.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
 
     listaFashion = ConvertirLista(cadenaFashion)
-    listaKid = ConvertirLista(cadenaKid)
-    listaPets = ConvertirLista(cadenaPets)
-    listaHouseful = ConvertirLista(cadenaHouseful)
+    listaKids = ConvertirLista(cadenaKids)
+    listaBeautyHealth = ConvertirLista(cadenaBeautyHealth)
+    listaHouseHome = ConvertirLista(cadenaHouseHome)
     listaElectro = ConvertirLista(cadenaElectro)
     return Response('Todo ok')
 
@@ -45,12 +45,12 @@ def ConvertirLista2(tienda,cantidad):
     arregglo_arreggladdo=[]
     if tienda == 'fashion':
         ultimos = Fashion.objects.all().order_by('-idFashion')[:cantidad]
-    elif tienda == 'kid':
-        ultimos = Kid.objects.all().order_by('-idKid')[:cantidad]
-    elif tienda == 'pets':
-        ultimos = Pets.objects.all().order_by('-idPets')[:cantidad]
-    elif tienda == 'houseful':
-        ultimos = Houseful.objects.all().order_by('-idHouseful')[:cantidad]
+    elif tienda == 'kids':
+        ultimos = Kids.objects.all().order_by('-idKids')[:cantidad]
+    elif tienda == 'beautyhealth':
+        ultimos = BeautyHealth.objects.all().order_by('-idBeautyHealth')[:cantidad]
+    elif tienda == 'househome':
+        ultimos = HouseHome.objects.all().order_by('-idHouseHome')[:cantidad]
     elif tienda == 'electro':
         ultimos = Electro.objects.all().order_by('-idElectro')[:cantidad]
     for x in reversed(ultimos):

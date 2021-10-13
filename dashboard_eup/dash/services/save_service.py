@@ -1,4 +1,4 @@
-from dash.serializers import DashboardSerializerElectro, DashboardSerializerFashion, DashboardSerializerHouseful, DashboardSerializerKid, DashboardSerializerPets
+from dash.serializers import DashboardSerializerElectro, DashboardSerializerFashion, DashboardSerializerHouseHome, DashboardSerializerKids, DashboardSerializerBeautyHealth
 
 
 def savedash(body, tienda):
@@ -26,8 +26,8 @@ def savedash(body, tienda):
         else:
             print("No se pudo guardar")
         return True
-    elif tienda == "houseful":
-        serializer = DashboardSerializerHouseful(data=body)
+    elif tienda == "househome":
+        serializer = DashboardSerializerHouseHome(data=body)
         try:
             serializer.is_valid(raise_exception=True)
         except Exception as e:
@@ -38,8 +38,8 @@ def savedash(body, tienda):
         else:
             print("No se pudo guardar")
         return True
-    elif tienda == "kid":
-        serializer = DashboardSerializerKid(data=body)
+    elif tienda == "kids":
+        serializer = DashboardSerializerKids(data=body)
         try:
             serializer.is_valid(raise_exception=True)
         except Exception as e:
@@ -50,8 +50,8 @@ def savedash(body, tienda):
         else:
             print("No se pudo guardar")
         return True
-    elif tienda == "pets":
-        serializer = DashboardSerializerPets(data=body)
+    elif tienda == "beautyhealth":
+        serializer = DashboardSerializerBeautyHealth(data=body)
         try:
             serializer.is_valid(raise_exception=True)
         except Exception as e:

@@ -74,8 +74,8 @@ class Fashion(models.Model):
         db_table = 'Fashion'
 
 
-class Houseful(models.Model):
-    idHouseful = models.AutoField(primary_key=True)
+class HouseHome(models.Model):
+    idHouseHome = models.AutoField(primary_key=True)
     actualizar = models.IntegerField(null=True)
     sixpm_actualizar = models.IntegerField(null=True)
     amazon_actualizar = models.IntegerField(null=True)
@@ -106,11 +106,11 @@ class Houseful(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
 
     class meta:
-        db_table = 'Houseful'
+        db_table = 'HouseHome'
 
 
-class Kid(models.Model):
-    idKid = models.AutoField(primary_key=True)
+class Kids(models.Model):
+    idKids = models.AutoField(primary_key=True)
     actualizar = models.IntegerField(null=True)
     sixpm_actualizar = models.IntegerField(null=True)
     amazon_actualizar = models.IntegerField(null=True)
@@ -141,11 +141,11 @@ class Kid(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
 
     class meta:
-        db_table = 'Kid'
+        db_table = 'Kids'
 
 
-class Pets(models.Model):
-    idPets = models.AutoField(primary_key=True)
+class BeautyHealth(models.Model):
+    idBeautyHealth = models.AutoField(primary_key=True)
     actualizar = models.IntegerField(null=True)
     sixpm_actualizar = models.IntegerField(null=True)
     amazon_actualizar = models.IntegerField(null=True)
@@ -176,4 +176,4 @@ class Pets(models.Model):
     fecha = models.DateTimeField(auto_now_add=True)
 
     class meta:
-        db_table = 'Pets'
+        db_table = 'BeautyHealth'

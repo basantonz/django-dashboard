@@ -9,15 +9,15 @@ from dash.services import save_service
 
 def obtainAllData():
     cadenaFashion = 'http://ec2-3-137-143-15.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaKid = 'http://ec2-3-144-150-219.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaPets = 'http://ec2-3-133-83-99.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaHouseful = ''
+    cadenaKids = 'http://ec2-3-144-150-219.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaBeautyHealth = 'http://ec2-3-133-83-99.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaHouseHome = ''
     cadenaElectro = 'http://ec2-18-118-170-239.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
 
     listaFashion = ConvertirLista(cadenaFashion, "other")
-    listaKid = ConvertirLista(cadenaKid, "other")
-    listaPets = ConvertirLista(cadenaPets, "other")
-    listaHouseful = ConvertirLista(cadenaHouseful, "other")
+    listaKids = ConvertirLista(cadenaKids, "other")
+    listaBeautyHealth = ConvertirLista(cadenaBeautyHealth, "other")
+    listaHouseHome = ConvertirLista(cadenaHouseHome, "other")
     listaElectro = ConvertirLista(cadenaElectro, "other")
 
     body_fashion = {
@@ -48,85 +48,85 @@ def obtainAllData():
         "fecha": datetime.datetime.now()
     }
 
-    body_kid = {
-        "actualizar": listaKid[0],
-        "sixpm_actualizar": listaKid[1],
-        "amazon_actualizar": listaKid[2],
-        "ebay_actualizar": listaKid[3],
-        "footlocker_actualizar": listaKid[4],
-        "nike_actualizar": listaKid[5],
-        "zappos_actualizar": listaKid[6],
-        "actualizados": listaKid[7],
-        "sixpm_actualizados": listaKid[8],
-        "amazon_actualizados": listaKid[9],
-        "ebay_actualizados": listaKid[10],
-        "footlocker_actualizados": listaKid[11],
-        "nike_actualizados": listaKid[12],
-        "zappos_actualizados": listaKid[13],
-        "creados": listaKid[14],
-        "sixpm_creados": listaKid[15],
-        "amazon_creados": listaKid[16],
-        "ebay_creados": listaKid[17],
-        "footlocker_creados": listaKid[18],
-        "nike_creados": listaKid[19],
-        "zappos_creados": listaKid[20],
-        "listos_subir_meli": listaKid[21],
-        "listos_subir_zyte": listaKid[22],
-        "all_products": listaKid[23],
+    body_kids = {
+        "actualizar": listaKids[0],
+        "sixpm_actualizar": listaKids[1],
+        "amazon_actualizar": listaKids[2],
+        "ebay_actualizar": listaKids[3],
+        "footlocker_actualizar": listaKids[4],
+        "nike_actualizar": listaKids[5],
+        "zappos_actualizar": listaKids[6],
+        "actualizados": listaKids[7],
+        "sixpm_actualizados": listaKids[8],
+        "amazon_actualizados": listaKids[9],
+        "ebay_actualizados": listaKids[10],
+        "footlocker_actualizados": listaKids[11],
+        "nike_actualizados": listaKids[12],
+        "zappos_actualizados": listaKids[13],
+        "creados": listaKids[14],
+        "sixpm_creados": listaKids[15],
+        "amazon_creados": listaKids[16],
+        "ebay_creados": listaKids[17],
+        "footlocker_creados": listaKids[18],
+        "nike_creados": listaKids[19],
+        "zappos_creados": listaKids[20],
+        "listos_subir_meli": listaKids[21],
+        "listos_subir_zyte": listaKids[22],
+        "all_products": listaKids[23],
         "fecha": datetime.datetime.now()
     }
-    body_pets = {
-        "actualizar": listaPets[0],
-        "sixpm_actualizar": listaPets[1],
-        "amazon_actualizar": listaPets[2],
-        "ebay_actualizar": listaPets[3],
-        "footlocker_actualizar": listaPets[4],
-        "nike_actualizar": listaPets[5],
-        "zappos_actualizar": listaPets[6],
-        "actualizados": listaPets[7],
-        "sixpm_actualizados": listaPets[8],
-        "amazon_actualizados": listaPets[9],
-        "ebay_actualizados": listaPets[10],
-        "footlocker_actualizados": listaPets[11],
-        "nike_actualizados": listaPets[12],
-        "zappos_actualizados": listaPets[13],
-        "creados": listaPets[14],
-        "sixpm_creados": listaPets[15],
-        "amazon_creados": listaPets[16],
-        "ebay_creados": listaPets[17],
-        "footlocker_creados": listaPets[18],
-        "nike_creados": listaPets[19],
-        "zappos_creados": listaPets[20],
-        "listos_subir_meli": listaPets[21],
-        "listos_subir_zyte": listaPets[22],
-        "all_products": listaPets[23],
+    body_beautyhealth = {
+        "actualizar": listaBeautyHealth[0],
+        "sixpm_actualizar": listaBeautyHealth[1],
+        "amazon_actualizar": listaBeautyHealth[2],
+        "ebay_actualizar": listaBeautyHealth[3],
+        "footlocker_actualizar": listaBeautyHealth[4],
+        "nike_actualizar": listaBeautyHealth[5],
+        "zappos_actualizar": listaBeautyHealth[6],
+        "actualizados": listaBeautyHealth[7],
+        "sixpm_actualizados": listaBeautyHealth[8],
+        "amazon_actualizados": listaBeautyHealth[9],
+        "ebay_actualizados": listaBeautyHealth[10],
+        "footlocker_actualizados": listaBeautyHealth[11],
+        "nike_actualizados": listaBeautyHealth[12],
+        "zappos_actualizados": listaBeautyHealth[13],
+        "creados": listaBeautyHealth[14],
+        "sixpm_creados": listaBeautyHealth[15],
+        "amazon_creados": listaBeautyHealth[16],
+        "ebay_creados": listaBeautyHealth[17],
+        "footlocker_creados": listaBeautyHealth[18],
+        "nike_creados": listaBeautyHealth[19],
+        "zappos_creados": listaBeautyHealth[20],
+        "listos_subir_meli": listaBeautyHealth[21],
+        "listos_subir_zyte": listaBeautyHealth[22],
+        "all_products": listaBeautyHealth[23],
         "fecha": datetime.datetime.now()
     }
-    body_houseful = {
-        "actualizar": listaHouseful[0],
-        "sixpm_actualizar": listaHouseful[1],
-        "amazon_actualizar": listaHouseful[2],
-        "ebay_actualizar": listaHouseful[3],
-        "footlocker_actualizar": listaHouseful[4],
-        "nike_actualizar": listaHouseful[5],
-        "zappos_actualizar": listaHouseful[6],
-        "actualizados": listaHouseful[7],
-        "sixpm_actualizados": listaHouseful[8],
-        "amazon_actualizados": listaHouseful[9],
-        "ebay_actualizados": listaHouseful[10],
-        "footlocker_actualizados": listaHouseful[11],
-        "nike_actualizados": listaHouseful[12],
-        "zappos_actualizados": listaHouseful[13],
-        "creados": listaHouseful[14],
-        "sixpm_creados": listaHouseful[15],
-        "amazon_creados": listaHouseful[16],
-        "ebay_creados": listaHouseful[17],
-        "footlocker_creados": listaHouseful[18],
-        "nike_creados": listaHouseful[19],
-        "zappos_creados": listaHouseful[20],
-        "listos_subir_meli": listaHouseful[21],
-        "listos_subir_zyte": listaHouseful[22],
-        "all_products": listaHouseful[23],
+    body_househome = {
+        "actualizar": listaHouseHome[0],
+        "sixpm_actualizar": listaHouseHome[1],
+        "amazon_actualizar": listaHouseHome[2],
+        "ebay_actualizar": listaHouseHome[3],
+        "footlocker_actualizar": listaHouseHome[4],
+        "nike_actualizar": listaHouseHome[5],
+        "zappos_actualizar": listaHouseHome[6],
+        "actualizados": listaHouseHome[7],
+        "sixpm_actualizados": listaHouseHome[8],
+        "amazon_actualizados": listaHouseHome[9],
+        "ebay_actualizados": listaHouseHome[10],
+        "footlocker_actualizados": listaHouseHome[11],
+        "nike_actualizados": listaHouseHome[12],
+        "zappos_actualizados": listaHouseHome[13],
+        "creados": listaHouseHome[14],
+        "sixpm_creados": listaHouseHome[15],
+        "amazon_creados": listaHouseHome[16],
+        "ebay_creados": listaHouseHome[17],
+        "footlocker_creados": listaHouseHome[18],
+        "nike_creados": listaHouseHome[19],
+        "zappos_creados": listaHouseHome[20],
+        "listos_subir_meli": listaHouseHome[21],
+        "listos_subir_zyte": listaHouseHome[22],
+        "all_products": listaHouseHome[23],
         "fecha": datetime.datetime.now()
     }
     body_electro = {
@@ -158,9 +158,9 @@ def obtainAllData():
     }
     saveFashion = save_service.savedash(body_fashion, "fashion")
     saveElectro = save_service.savedash(body_electro, "electro")
-    saveHouseful = save_service.savedash(body_houseful, "houseful")
-    savePets = save_service.savedash(body_pets, "pets")
-    saveKid = save_service.savedash(body_kid, "kid")
+    saveHouseHome = save_service.savedash(body_househome, "househome")
+    saveBeautyHealth = save_service.savedash(body_beautyhealth, "beautyhealth")
+    saveKids = save_service.savedash(body_kids, "kids")
 
 
 def ConvertirLista(cadena, type_of_cadena):
