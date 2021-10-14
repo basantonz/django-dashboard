@@ -36,7 +36,7 @@ class DashboardSerializerElectro(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        print("Guardamos la data")
+        print("Guardamos la data de Electro")
         pprint(validated_data)
         try:
             datosElectro = Electro.objects.create(**validated_data)
@@ -77,7 +77,7 @@ class DashboardSerializerFashion(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        print("Guardamos la data")
+        print("Guardamos la data de Fashion")
         pprint(validated_data)
         try:
             datosFashion = Fashion.objects.create(**validated_data)
@@ -118,7 +118,7 @@ class DashboardSerializerHouseHome (serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        print("Guardamos la data")
+        print("Guardamos la data de HouseHome")
         pprint(validated_data)
         try:
             datosHouseHome = HouseHome.objects.create(**validated_data)
@@ -159,7 +159,7 @@ class DashboardSerializerKids(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        print("Guardamos la data")
+        print("Guardamos la data de Kids")
         pprint(validated_data)
         try:
             datosKids = Kids.objects.create(**validated_data)
@@ -200,7 +200,7 @@ class DashboardSerializerBeautyHealth(serializers.ModelSerializer):
         ]
 
     def create(self, validated_data):
-        print("Guardamos la data")
+        print("Guardamos la data de BeautyHealth")
         pprint(validated_data)
         try:
             datosBeautyHealth = BeautyHealth.objects.create(**validated_data)
