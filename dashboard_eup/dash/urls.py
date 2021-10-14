@@ -11,6 +11,7 @@ urlpatterns = [
     path('tiendas/electro',electro, name='electro'),
     path('tiendas/househome',househome, name='househome'),
     path('tiendas/beautyhealth',beautyhealth, name='beautyhealth'),
+    path('tiendas/kids',kids, name='kids'),
     path('configuracion/',configuracion,name='configuracion'),
     path('usuarios/',usuarios,name='usuarios'),
 ]
