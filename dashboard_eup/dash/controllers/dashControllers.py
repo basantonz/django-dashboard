@@ -9,10 +9,10 @@ from dash.models import Fashion, Kids, BeautyHealth, HouseHome, Electro
 
 @api_view(['GET'])
 def obtainAllData(request):
-    cadenaFashion = 'http://ec2-3-137-143-15.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaKids = 'http://ec2-3-144-150-219.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaBeautyHealth = 'http://ec2-3-133-83-99.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-    cadenaHouseHome = ''
+    cadenaFashion = 'http:/ec2-18-218-217-186.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaKids = 'http://ec2-18-117-168-228.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaBeautyHealth = 'http://ec2-18-218-117-226.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+    cadenaHouseHome = 'http://	ec2-18-117-219-250.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
     cadenaElectro = 'http://ec2-18-118-170-239.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
 
     listaFashion = ConvertirLista(cadenaFashion)
