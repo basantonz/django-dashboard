@@ -4,10 +4,10 @@ import json
 from .controllers.dashControllers import ConvertirLista, ConvertirLista2
 from dash.models import Fashion, Kids, BeautyHealth, HouseHome, Electro
 
-#cadenaFashion = 'http:/ec2-18-218-217-186.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+#cadenaFashion = 'http://ec2-18-218-217-186.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
 #cadenaKids = 'http://ec2-18-117-168-228.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
 #cadenaBeautyHealth = 'http://ec2-18-218-117-226.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
-#cadenaHouseHome = 'http://	ec2-18-117-219-250.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
+#cadenaHouseHome = 'http://ec2-18-117-219-250.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
 #cadenaElectro = 'http://ec2-18-118-170-239.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
 
 cadenaFashion = 'http:/ec2-18-218-217-186.us-east-2.compute.amazonaws.com/api/v2.0/getStoreMetrics/'
